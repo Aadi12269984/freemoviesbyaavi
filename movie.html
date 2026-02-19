@@ -1,0 +1,29 @@
+<!DOCTYPE html><html>
+<head>
+<meta charset="UTF-8">
+<title>Player</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body{background:#0b0b0b;color:white;font-family:Arial;margin:0}
+.container{padding:15px}
+video{width:100%;border-radius:10px;background:black}
+button{background:#e50914;border:none;color:white;padding:12px;margin-top:10px;border-radius:8px;font-size:16px}
+</style>
+</head>
+<body><div class="container">
+<h2 id="title"></h2><video id="player" controls controlsList="nodownload"></video>
+
+<br>
+<a id="download" href="#" download>
+<button>Download</button>
+</a>
+</div><script>
+const urlParams = new URLSearchParams(window.location.search);
+const video = urlParams.get('video');
+const title = urlParams.get('title');
+
+document.getElementById("title").innerText = title;
+document.getElementById("player").src = video;
+document.getElementById("download").href = video;
+</script></body>
+</html>
